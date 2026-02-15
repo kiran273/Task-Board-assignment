@@ -1,0 +1,48 @@
+.board-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+}
+
+.board-container {
+  flex: 1;
+  padding: 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.columns-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  min-width: 900px;
+  height: 100%;
+}
+
+.drag-overlay-task {
+  cursor: grabbing;
+}
+
+.task-card.dragging {
+  opacity: 0.5;
+  transform: rotate(3deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .board-container {
+    padding: 1rem;
+  }
+  
+  .columns-wrapper {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .columns-wrapper {
+    grid-template-columns: 1fr;
+    min-width: unset;
+  }
+}
